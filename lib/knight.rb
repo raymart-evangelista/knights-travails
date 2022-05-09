@@ -5,7 +5,7 @@ class Knight
   def initialize(curr_pos)
     @moves = Tree.new(curr_pos)
     puts "Knight created."
-    knight_moves(@moves.data, [7,7])
+    knight_moves(@moves.data, [4,3])
 
   end
   # knight_moves will use BFS algorithm because we want the least moves possible
