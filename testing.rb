@@ -38,7 +38,16 @@ def knight_moves(curr_pos, dest, visit_q=[])
     end
     # add moves' unvisited children to queue until there are no more
     @moves.child.each do |child|
-      visit_q.push(child)
+      if child.data == dest
+        puts "Found the destination"
+        return child.data
+      else
+        visit_q.push(child)
+      end
     end
 
+    # dequeue child and set that as moves
+    @moves = visit_q.shift
+    # recurse with new curr_pos
+    knights_moves(moves.data, dest, visit_q)
 end
